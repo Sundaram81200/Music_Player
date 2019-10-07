@@ -40,7 +40,3 @@ Future<List<FileSystemEntity>> getMusicFiles() async {
   return _songs;
   }
 }
-
-
-
-  
