@@ -14,12 +14,12 @@ class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
 
   @override
   Stream<MusicplayerState> mapEventToState(
-      MusicplayerEvent event,
-      ) async* {
+    MusicplayerEvent event,
+  ) async* {
     if (event is AppStarted) {
       yield ListLoading();
       List<FileSystemEntity> _songs = await getMusicFiles();
-      yield ListLoaded(_songs);
+      yield ListLoaded(_songs);      
     }
   }
 }
@@ -29,18 +29,18 @@ Future<List<FileSystemEntity>> getMusicFiles() async {
   bool y = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
   if(!y) SimplePermissions.requestPermission(Permission.WriteExternalStorage);
   if(!x) SimplePermissions.requestPermission(Permission.ReadExternalStorage);
-  {
-    Directory extDir = await getExternalStorageDirectory();
-    List<FileSystemEntity> _files;
-    _files = extDir.listSync(recursive: true, followLinks: false);
-    List<FileSystemEntity> _songs;
-    for(FileSystemEntity x in _files) {
-      if(x.path.contains(".mp3")) _songs.add(x);
-    }
-    return _songs;
+ {
+  Directory extDir = Directory('storage/emulated/0/Music');
+  List<FileSystemEntity> _files;
+  _files = extDir.listSync(recursive: true, followLinks: false);
+  List<FileSystemEntity> _songs = new List();
+  for(FileSystemEntity x in _files) {
+    if(x.path.contains(".mp3")) _songs.add(x); 
+  }
+  return _songs;
   }
 }
 
 
 
-
+  

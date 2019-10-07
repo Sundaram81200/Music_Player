@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class ListScreen extends StatefulWidget {
-
   final List<FileSystemEntity> listItems;
   ListScreen(this.listItems);
 
@@ -14,7 +13,6 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-
   final List<FileSystemEntity> listItems;
   _ListScreenState(this.listItems);
 
@@ -109,14 +107,16 @@ class _GetListViewState extends State<GetListView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
-      return ListTile(
-        leading: Icon(Icons.arrow_right),
-        title: Text(listItems.elementAt(index).path),
-        onTap: () {
-          showSnackBar(context, listItems.elementAt(index).path);
-        },
+      return Card(
+        elevation: 4.0,
+        child: ListTile(
+          leading: Icon(Icons.arrow_right),
+          title: Text(listItems.elementAt(index).path),
+          onTap: () {
+            showSnackBar(context, listItems.elementAt(index).path);
+          },
+        ),
       );
     });
-
   }
 }
