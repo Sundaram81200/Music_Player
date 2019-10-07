@@ -108,9 +108,10 @@ class _GetListViewState extends State<GetListView> {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
-        elevation: 4.0,
+        color: Colors.transparent,
+        elevation: 0.0,
         child: ListTile(
-          leading: Icon(Icons.arrow_right),
+          leading: Icon(Icons.album),
           title: Text(listItems.elementAt(index).path),
           onTap: () {
             showSnackBar(context, listItems.elementAt(index).path);
