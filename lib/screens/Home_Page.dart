@@ -29,7 +29,7 @@ class _ListScreenState extends State<ListScreen> {
               width: screenWidth,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/day.jpeg'),
+                  image: AssetImage('assets/Back.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -40,10 +40,10 @@ class _ListScreenState extends State<ListScreen> {
                   padding: EdgeInsets.only(top: 45.0, left: 20.0, right: 20.0),
                   child: Container(
                     padding: EdgeInsets.only(left: 25.0, right: 25.0),
-                    height: 40.0,
+                    height: 50.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25.0),
-                        color: Color(0xFF274B61)),
+                        color: Colors.white70,),
                     child: Center(
                       child: TextField(
                         decoration: InputDecoration(
@@ -111,8 +111,15 @@ class _GetListViewState extends State<GetListView> {
         color: Colors.transparent,
         elevation: 0.0,
         child: ListTile(
+
           leading: Icon(Icons.album),
-          title: Text(listItems.elementAt(index).path),
+          title: Text(listItems.elementAt(index).path,style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Montserrat',
+              fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.normal,
+          ),),
           onTap: () {
             showSnackBar(context, listItems.elementAt(index).path);
           },
