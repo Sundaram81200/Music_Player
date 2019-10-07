@@ -7,7 +7,7 @@ abstract class MusicplayerEvent extends Equatable {
 class AppStarted extends MusicplayerEvent {
   @override
   List<Object> get props => null;
-
+  
 }
 
 
