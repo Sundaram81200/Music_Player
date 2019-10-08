@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
- class Play_Page extends StatefulWidget {
+ class PlayPage extends StatefulWidget {
    @override
-   _Play_PageState createState() => _Play_PageState();
+   _PlayPageState createState() => _PlayPageState();
  }
  
- class _Play_PageState extends State<Play_Page> {
+ class _PlayPageState extends State<PlayPage> {
 
    @override
    Widget build(BuildContext context) {

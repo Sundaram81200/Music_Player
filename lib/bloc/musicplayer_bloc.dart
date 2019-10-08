@@ -30,12 +30,12 @@ Future<List<FileSystemEntity>> getMusicFiles() async {
   if(!y) SimplePermissions.requestPermission(Permission.WriteExternalStorage);
   if(!x) SimplePermissions.requestPermission(Permission.ReadExternalStorage);
  {
-  Directory extDir = Directory('storage/emulated/0/Music');
+  Directory extDir = Directory('storage/emulated/0/');
   List<FileSystemEntity> _files;
   _files = extDir.listSync(recursive: true, followLinks: false);
   List<FileSystemEntity> _songs = new List();
   for(FileSystemEntity x in _files) {
-    if(x.path.contains(".mp3")) _songs.add(x); 
+    if(x.path.endsWith(".mp3")) _songs.add(x); 
   }
   return _songs;
   }

@@ -109,7 +109,7 @@ class _GetListViewState extends State<GetListView> {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
         color: Colors.transparent,
-        elevation: 0.0,
+        elevation: 4.0,
         child: ListTile(
 
           leading: Icon(Icons.album),
@@ -127,4 +127,8 @@ class _GetListViewState extends State<GetListView> {
       );
     });
   }
+}
+
+String songName(String string) {
+  
 }
