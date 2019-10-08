@@ -38,8 +38,8 @@ import 'package:flutter/services.dart';
                    InkWell(
                      onTap:() {Navigator.pop(context);},
 
-                       child: Icon(Icons.keyboard_arrow_left,
-                       color: Colors.white54, size: 24),
+                       child: IconButton( icon:Icon(Icons.keyboard_arrow_left,
+                           color: Colors.white54, size: 24) ,),
 
                    ),
 
@@ -98,9 +98,11 @@ import 'package:flutter/services.dart';
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: <Widget>[
                    InkWell(
-                     child: Icon(
-                       Icons.favorite_border,
-                       color: Colors.white54,
+                     child: IconButton(
+                       icon: Icon(Icons.favorite_border,
+                         color: Colors.white54,
+                       ),
+
                      ),
                      onTap: () {}
                    ),
