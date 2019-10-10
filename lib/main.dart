@@ -9,7 +9,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Play_Page(),
+      home: MyApp(),
     ),
   );
 }
@@ -42,6 +42,10 @@ class _MyAppState extends State<MyApp> {
               }
               if (state is ListLoaded) {
                 return ListScreen(state.songs);
+              }
+              if(state is SongActionState) {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => PlayPage()));
+                return PlayPage();
               }
               return Container(child: Center(child: Text("lol fucked")));
             },
