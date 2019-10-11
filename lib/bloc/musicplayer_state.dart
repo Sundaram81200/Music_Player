@@ -17,7 +17,7 @@ class ListLoading extends MusicplayerState {
 }
 
 class ListLoaded extends MusicplayerState {
-  final List<FileSystemEntity> songs;
+  var songs;
 
   ListLoaded(this.songs);
 
