@@ -1,9 +1,11 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:music_player2/bloc/bloc.dart';
 
 class ListScreen extends StatefulWidget {
-    final List<FileSystemEntity> listItems;
+
+  final List<dynamic> listItems;
+
   ListScreen(this.listItems);
 
   @override
@@ -13,7 +15,7 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
-  final List<FileSystemEntity> listItems;
+  final List<dynamic> listItems;
   _ListScreenState(this.listItems);
 
   
@@ -44,8 +46,9 @@ class _ListScreenState extends State<ListScreen> {
                     padding: EdgeInsets.only(left: 25.0, right: 25.0),
                     height: 50.0,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: Colors.white70,),
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.white70,
+                    ),
                     child: Center(
                       child: TextField(
                         decoration: InputDecoration(
@@ -84,17 +87,12 @@ class _ListScreenState extends State<ListScreen> {
 void showSnackBar(BuildContext context, String item) {
   var snackBar = SnackBar(
     content: Text("you just tapped $item"),
-    action: SnackBarAction(
-        label: "UNDO",
-        onPressed: () {
-          debugPrint("dummy undo button");
-        }),
   );
   Scaffold.of(context).showSnackBar(snackBar);
 }
 
 class GetListView extends StatefulWidget {
-  final List<FileSystemEntity> listItems;
+  final List<dynamic> listItems;
   GetListView(this.listItems);
 
   @override
@@ -104,29 +102,43 @@ class GetListView extends StatefulWidget {
 }
 
 class _GetListViewState extends State<GetListView> {
-  final List<FileSystemEntity> listItems;
+  MusicplayerBloc bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    bloc = BlocProvider.of<MusicplayerBloc>(context);
+  }
+
+  final List<dynamic> listItems;
   _GetListViewState(this.listItems);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
-        color: Colors.transparent,
-        elevation: 4.0,
-        child: ListTile(
 
-          leading: Icon(Icons.album),
-          title: Text(listItems.elementAt(index).path,style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Montserrat',
-              fontSize: 16.0,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.normal,
-          ),),
-          onTap: () {
-            showSnackBar(context, listItems.elementAt(index).path);
-          },
-        ),
-      );
+          color: Colors.transparent,
+          elevation: 0.0,
+          child: ListTile(
+            leading: Icon(Icons.album),
+            title: Text(
+              listItems.elementAt(index).uri,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Montserrat',
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.normal,
+              ),
+            ),
+            onTap: () {
+              showSnackBar(context, listItems.elementAt(index).uri);
+              bloc.dispatch(SongAction(listItems.elementAt(index).uri));
+            },
+          ),
+        );
+      
+
     });
   }
 }
