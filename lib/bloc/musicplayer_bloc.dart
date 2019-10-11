@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-// import 'package:flutter/material.dart';
 import './bloc.dart';
 import 'package:flute_music_player/flute_music_player.dart';
-// import 'package:simple_permissions/simple_permissions.dart';
+
 
 class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
   @override
@@ -35,6 +34,7 @@ class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
   }
 }
 
+
 // Future<List<FileSystemEntity>> getMusicFiles() async {
 //   bool x = await SimplePermissions.checkPermission(Permission.ReadExternalStorage);
 //   bool y = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
@@ -61,4 +61,5 @@ Future<String> pause(MusicFinder audioPlayer) async {
   final result = await audioPlayer.pause();
   if(result == 1) return "paused";
   else return "playing";  
+
 }

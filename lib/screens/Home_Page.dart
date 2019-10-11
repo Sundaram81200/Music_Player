@@ -116,6 +116,7 @@ class _GetListViewState extends State<GetListView> {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
+
           color: Colors.transparent,
           elevation: 0.0,
           child: ListTile(
@@ -137,6 +138,11 @@ class _GetListViewState extends State<GetListView> {
           ),
         );
       
+
     });
   }
+}
+
+String songName(String string) {
+  return "";
 }

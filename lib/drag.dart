@@ -13,7 +13,7 @@ class _DragState extends State<Drag> {
     return Scaffold(
       body: SlidingUpPanel(
         maxHeight: MediaQuery.of(context).size.height,
-        panel: Play_Page(),
+        panel: PlayPage(),
         collapsed: Container(
           color: Colors.red,
           child:  Row(
@@ -21,6 +21,7 @@ class _DragState extends State<Drag> {
             children: <Widget>[
               InkWell(
                   child: IconButton(
+                    onPressed: () {},
                     icon: Icon(Icons.favorite_border,
                       color: Colors.white54,
                     ),
