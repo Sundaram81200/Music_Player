@@ -4,12 +4,13 @@ import 'package:music_player2/bloc/bloc.dart';
 import 'package:music_player2/bloc/musicplayer_bloc.dart';
 import './screens/Play_Page.dart';
 import './screens/Home_Page.dart';
+import 'drag.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Play_Page(),
+      home: Drag(),
     ),
   );
 }

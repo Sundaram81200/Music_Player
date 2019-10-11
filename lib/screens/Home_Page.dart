@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class ListScreen extends StatefulWidget {
-  final List<FileSystemEntity> listItems;
+    final List<FileSystemEntity> listItems;
   ListScreen(this.listItems);
 
   @override
