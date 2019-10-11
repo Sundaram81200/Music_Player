@@ -14,7 +14,7 @@ import 'package:flutter/services.dart';
      SystemChrome.setEnabledSystemUIOverlays([]);
      return Scaffold(
        body: Container(
-         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 14),
          decoration: BoxDecoration(
            gradient: LinearGradient(
              begin: Alignment.topRight,
@@ -28,9 +28,12 @@ import 'package:flutter/services.dart';
              tileMode: TileMode.clamp,
            ),
          ),
+         height: MediaQuery.of(context).size.height,
+         width: MediaQuery.of(context).size.width,
          child: Center(
            child: Column(
              mainAxisAlignment: MainAxisAlignment.start,
+
              children: <Widget>[
                Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,8 +41,8 @@ import 'package:flutter/services.dart';
                    InkWell(
                      onTap:() {Navigator.pop(context);},
 
-                       child: Icon(Icons.keyboard_arrow_left,
-                       color: Colors.white54, size: 24),
+                       child: IconButton( icon:Icon(Icons.keyboard_arrow_left,
+                           color: Colors.white54, size: 24) ,),
 
                    ),
 
@@ -98,9 +101,11 @@ import 'package:flutter/services.dart';
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: <Widget>[
                    InkWell(
-                     child: Icon(
-                       Icons.favorite_border,
-                       color: Colors.white54,
+                     child: IconButton(
+                       icon: Icon(Icons.favorite_border,
+                         color: Colors.white54,
+                       ),
+
                      ),
                      onTap: () {}
                    ),
