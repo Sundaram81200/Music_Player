@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_player2/bloc/bloc.dart';
 
 class ListScreen extends StatefulWidget {
+
   final List<dynamic> listItems;
+
   ListScreen(this.listItems);
 
   @override

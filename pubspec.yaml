@@ -28,6 +28,7 @@ dependencies:
   equatable: ^0.6.0
   path_provider:
   simple_permissions: ^0.1.9
+  sliding_up_panel:
 
 dev_dependencies:
   flutter_test:
