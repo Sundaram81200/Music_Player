@@ -41,7 +41,9 @@ import 'package:flutter/services.dart';
                    InkWell(
                      onTap:() {Navigator.pop(context);},
 
-                       child: IconButton( icon:Icon(Icons.keyboard_arrow_left,
+                       child: IconButton( 
+                         onPressed: () {},
+                         icon:Icon(Icons.keyboard_arrow_left,
                            color: Colors.white54, size: 24) ,),
 
                    ),
@@ -102,6 +104,7 @@ import 'package:flutter/services.dart';
                  children: <Widget>[
                    InkWell(
                      child: IconButton(
+                       onPressed: () {},
                        icon: Icon(Icons.favorite_border,
                          color: Colors.white54,
                        ),
