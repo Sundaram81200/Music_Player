@@ -166,6 +166,7 @@ class _GetListViewState extends State<GetListView> {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
+<<<<<<< HEAD
         color: Colors.transparent,
         elevation: 4.0,
         child: ListTile(
@@ -186,6 +187,31 @@ class _GetListViewState extends State<GetListView> {
           },
         ),
       );
+=======
+
+          color: Colors.transparent,
+          elevation: 0.0,
+          child: ListTile(
+            leading: Icon(Icons.album),
+            title: Text(
+              listItems.elementAt(index).uri,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Montserrat',
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.normal,
+              ),
+            ),
+            onTap: () {
+              showSnackBar(context, listItems.elementAt(index).uri);
+              bloc.dispatch(SongAction(listItems.elementAt(index).uri));
+            },
+          ),
+        );
+      
+
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
     });
   }
 }
