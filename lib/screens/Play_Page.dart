@@ -8,39 +8,6 @@ class PlayPage extends StatefulWidget {
     return _PlayPageState();
   }
 }
-   @override
-   Widget build(BuildContext context) {
-     var textColor = Color.fromRGBO(250, 250, 250, 0.95);
-     var textStyle = TextStyle(fontFamily: 'Montserrat', color: textColor);
-     SystemChrome.setEnabledSystemUIOverlays([]);
-     return Scaffold(
-       body: Container(
-         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 14),
-         decoration: BoxDecoration(
-           gradient: LinearGradient(
-             begin: Alignment.topRight,
-             end: Alignment.bottomLeft,
-             stops: [0.05, 0.35, 0.95],
-             colors: <Color>[
-               Color.fromRGBO(30, 30, 30, 1),
-               Color.fromRGBO(45, 45, 45, 1),
-               Color.fromRGBO(15, 15, 15, 1),
-             ],
-             tileMode: TileMode.clamp,
-           ),
-         ),
-         height: MediaQuery.of(context).size.height,
-         width: MediaQuery.of(context).size.width,
-         child: Center(
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.start,
-
-             children: <Widget>[
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: <Widget>[
-                   InkWell(
-                     onTap:() {Navigator.pop(context);},
 
 class _PlayPageState extends State<PlayPage> {
   String playState = "playing";
