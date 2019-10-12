@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:equatable/equatable.dart';
 
 abstract class MusicplayerState extends Equatable {
@@ -23,4 +21,13 @@ class ListLoaded extends MusicplayerState {
 
   @override
   List<Object> get props => songs;
+}
+
+class SongActionState extends MusicplayerState {
+  final String state;
+
+  SongActionState(this.state);
+
+  @override
+  List<Object> get props => [state];
 }
