@@ -1,17 +1,14 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-// import 'package:flutter/material.dart';
-import './bloc.dart';
 import 'package:flute_music_player/flute_music_player.dart';
-// import 'package:simple_permissions/simple_permissions.dart';
+import './bloc.dart';
 
 class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
   @override
   MusicplayerState get initialState => InitialMusicplayerState();
 
-  MusicFinder audioPlayer = new MusicFinder();
+  MusicFinder audioPlayer = MusicFinder();
   String playStatus = "paused";
-
   @override
   Stream<MusicplayerState> mapEventToState(
     MusicplayerEvent event,

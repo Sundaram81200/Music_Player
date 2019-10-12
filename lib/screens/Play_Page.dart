@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+ 
 
 
 class PlayPage extends StatefulWidget {
@@ -10,8 +11,6 @@ class PlayPage extends StatefulWidget {
 }
 
 class _PlayPageState extends State<PlayPage> {
-  String playState = "playing";
-
   @override
   Widget build(BuildContext context) {
     var textColor = Color.fromRGBO(250, 250, 250, 0.95);
@@ -79,66 +78,67 @@ class _PlayPageState extends State<PlayPage> {
                 },
                 min: 0.0,
                 // max: variable that stores the max length of the song,
-                value: 0.2,
-                activeColor: Colors.red,
-              ),
-              SizedBox(height: 5),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    '0:00',
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  Text(
-                    'song time',
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  InkWell(
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.favorite_border,
-                          color: Colors.white54,
-                        ),
-                        onPressed: () {},
-                      ),
-                      onTap: () {}),
-                  InkWell(
-                    child: Icon(
-                      Icons.skip_previous,
-                      color: Colors.white,
-                      size: 50,
-                    ),
-                    onTap: () {},
-                  ),
-                  InkWell(
-                    child: Icon(
-                      Icons.play_circle_filled,
-                      color: Colors.white70,
-                      size: 70,
-                    ),
-                    onTap: () {},
-                  ),
-                  InkWell(
-                    child: Icon(
-                      Icons.skip_next,
-                      color: textColor,
-                      size: 50,
-                    ),
-                    onTap: () {},
-                  ),
+                 value: 0.2,
+                 activeColor: Colors.red,
+               ),
+               SizedBox(height: 5),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: <Widget>[
+                   Text(
+                     '0:00',
+                     style: TextStyle(
+                         fontSize: 13,
+                         color: Colors.grey,
+                   ),
+                   ),
+                   Text(
+                     'song time',
+                     style: TextStyle(
+                       fontSize: 13,
+                       color: Colors.grey,
+                     ),
+                     ),
+                 ],
+               ),
+               SizedBox(height: 20),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: <Widget>[
+                   InkWell(
+                     child: IconButton(
+                       onPressed: () {},
+                       icon: Icon(Icons.favorite_border,
+                         color: Colors.white54,
+                       ),
+
+                     ),
+                     onTap: () {}
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.skip_previous,
+                       color: Colors.white,
+                       size: 50,
+                     ),
+                     onTap: (){},
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.play_circle_filled,
+                       color: Colors.white70,
+                       size: 70,
+                     ),
+                     onTap: (){},
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.skip_next,
+                       color: textColor,
+                       size: 50,
+                     ),
+                     onTap: (){},
+                   ),
                   InkWell(
                     child: Icon(
                       Icons.do_not_disturb,
