@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD
+ 
+
+=======
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
 
 class PlayPage extends StatefulWidget {
   @override
@@ -7,11 +12,16 @@ class PlayPage extends StatefulWidget {
     return _PlayPageState();
   }
 }
+<<<<<<< HEAD
+
+class _PlayPageState extends State<PlayPage> {
+=======
  
 
 class _PlayPageState extends State<PlayPage> {
   String playState = "playing";
 
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
   @override
   Widget build(BuildContext context) {
     var textColor = Color.fromRGBO(250, 250, 250, 0.95);
@@ -79,6 +89,69 @@ class _PlayPageState extends State<PlayPage> {
                 },
                 min: 0.0,
                 // max: variable that stores the max length of the song,
+<<<<<<< HEAD
+                 value: 0.2,
+                 activeColor: Colors.red,
+               ),
+               SizedBox(height: 5),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: <Widget>[
+                   Text(
+                     '0:00',
+                     style: TextStyle(
+                         fontSize: 13,
+                         color: Colors.grey,
+                   ),
+                   ),
+                   Text(
+                     'song time',
+                     style: TextStyle(
+                       fontSize: 13,
+                       color: Colors.grey,
+                     ),
+                     ),
+                 ],
+               ),
+               SizedBox(height: 20),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: <Widget>[
+                   InkWell(
+                     child: IconButton(
+                       onPressed: () {},
+                       icon: Icon(Icons.favorite_border,
+                         color: Colors.white54,
+                       ),
+
+                     ),
+                     onTap: () {}
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.skip_previous,
+                       color: Colors.white,
+                       size: 50,
+                     ),
+                     onTap: (){},
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.play_circle_filled,
+                       color: Colors.white70,
+                       size: 70,
+                     ),
+                     onTap: (){},
+                   ),
+                   InkWell(
+                     child: Icon(
+                       Icons.skip_next,
+                       color: textColor,
+                       size: 50,
+                     ),
+                     onTap: (){},
+                   ),
+=======
 
                 value: 0.2,
                 activeColor: Colors.red,
@@ -141,6 +214,7 @@ class _PlayPageState extends State<PlayPage> {
                     ),
                     onTap: () {},
                   ),
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
                   InkWell(
                     child: Icon(
                       Icons.do_not_disturb,

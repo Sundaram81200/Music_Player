@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_player2/bloc/bloc.dart';
 import 'package:music_player2/bloc/musicplayer_bloc.dart';
 import './screens/Home_Page.dart';
+import './screens/Play_Page.dart';
 
 void main() {
   runApp(

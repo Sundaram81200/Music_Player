@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_player2/bloc/bloc.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
+
+import 'Play_Page.dart';
 
 class ListScreen extends StatefulWidget {
-
   final List<dynamic> listItems;
 
   ListScreen(this.listItems);
@@ -17,8 +19,6 @@ class ListScreen extends StatefulWidget {
 class _ListScreenState extends State<ListScreen> {
   final List<dynamic> listItems;
   _ListScreenState(this.listItems);
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +77,56 @@ class _ListScreenState extends State<ListScreen> {
                 ),
               ],
             ),
+            SlidingUpPanel(
+              backdropOpacity: 1,
+              maxHeight: MediaQuery.of(context).size.height,
+              panel: PlayPage(),
+              collapsed: Container(
+                color: Colors.black45,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    InkWell(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border,
+                            color: Colors.white54,
+                          ),
+                        ),
+                        onTap: () {}),
+                    InkWell(
+                      child: Icon(
+                        Icons.skip_previous,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                      onTap: () {},
+                    ),
+                    InkWell(
+                      child: Icon(
+                        Icons.play_circle_filled,
+                        color: Colors.white70,
+                        size: 70,
+                      ),
+                      onTap: () {},
+                    ),
+                    InkWell(
+                      child: Icon(
+                        Icons.skip_next,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      width: 35.0,
+                    )
+                  ],
+                ),
+              ),
+              body: Container(),
+            ),
           ],
         ),
       ),
@@ -116,6 +166,28 @@ class _GetListViewState extends State<GetListView> {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
       return Card(
+<<<<<<< HEAD
+        color: Colors.transparent,
+        elevation: 4.0,
+        child: ListTile(
+          leading: Icon(Icons.album),
+          title: Text(
+            listItems.elementAt(index).uri,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.normal,
+            ),
+          ),
+          onTap: () {
+            showSnackBar(context, listItems.elementAt(index).uri);
+            bloc.dispatch(SongAction(listItems.elementAt(index).uri));
+          },
+        ),
+      );
+=======
 
           color: Colors.transparent,
           elevation: 0.0,
@@ -139,6 +211,7 @@ class _GetListViewState extends State<GetListView> {
         );
       
 
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
     });
   }
 }

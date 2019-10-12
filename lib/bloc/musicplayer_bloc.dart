@@ -1,16 +1,20 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+<<<<<<< HEAD
+import 'package:flute_music_player/flute_music_player.dart';
+import './bloc.dart';
+=======
 import './bloc.dart';
 import 'package:flute_music_player/flute_music_player.dart';
 
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
 
 class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
   @override
   MusicplayerState get initialState => InitialMusicplayerState();
 
-  MusicFinder audioPlayer = new MusicFinder();
+  MusicFinder audioPlayer = MusicFinder();
   String playStatus = "paused";
-
   @override
   Stream<MusicplayerState> mapEventToState(
     MusicplayerEvent event,
@@ -34,7 +38,10 @@ class MusicplayerBloc extends Bloc<MusicplayerEvent, MusicplayerState> {
   }
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
 // Future<List<FileSystemEntity>> getMusicFiles() async {
 //   bool x = await SimplePermissions.checkPermission(Permission.ReadExternalStorage);
 //   bool y = await SimplePermissions.checkPermission(Permission.WriteExternalStorage);
@@ -61,5 +68,9 @@ Future<String> pause(MusicFinder audioPlayer) async {
   final result = await audioPlayer.pause();
   if(result == 1) return "paused";
   else return "playing";  
+<<<<<<< HEAD
+}
+=======
 
 }
+>>>>>>> ece0949c80ed635db38d2fbc58a4d37298324981
